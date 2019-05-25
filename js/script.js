@@ -1,10 +1,4 @@
 
-window.onload = function () {
-    var wheel = new wheelnav("wheelDiv");
-    wheel.createWheel(["Horse", "Sheep", "Monkey", "Chicken", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake" ]);
-};
-
-
 var dates = [
     {
         startDate: "01/29/1930",
@@ -415,7 +409,11 @@ var dates = [
 
 
 
-$( "#lunarCalendar" ).submit(function( event ) {
+
+
+
+
+$( "form" ).submit(function( event ) {
     event.preventDefault();
 
     var month = $( ".month" ).val();
@@ -435,35 +433,50 @@ $( "#lunarCalendar" ).submit(function( event ) {
     }
 
     console.log(animal);
-    
-    if (animal === 'Horse') {
-        var animal = 0;
-    } else if(animal === 'Sheep') {
-        var animal = 1;
-    } else if(animal === 'Monkey') {
-        var animal = 2;
-    } else if(animal === 'Chicken') {
-        var animal = 3;
-    } else if(animal === 'Dog') {
-        var animal = 4;
-    } else if(animal === 'Pig') {
-        var animal = 5;
-    } else if(animal === 'Rat') {
-        var animal = 6;
-    } else if(animal === 'Ox') {
-        var animal = 7;
-    } else if(animal === 'Tiger') {
-        var animal = 8;
-    } else if(animal === 'Rabbit') {
-        var animal = 9;
-    } else if(animal === 'Dragon') {
-        var animal = 10;
+
+
+    if(animal === undefined) {
+        $('.error').text('Please enter your full birthday');
     } else {
-        var animal = 11;  
+
+        if (animal === 'Horse') {
+            $(".wheel").addClass('goToHorse');
+        } else if(animal === 'Sheep') {
+            $(".wheel").addClass('goToSheep');
+        } else if(animal === 'Monkey') {
+            $(".wheel").addClass('goToMonkey');
+        } else if(animal === 'Chicken') {
+            $(".wheel").addClass('goToChicken');
+        } else if(animal === 'Dog') {
+            $(".wheel").addClass('goToDog');
+        } else if(animal === 'Pig') {
+            $(".wheel").addClass('goToPig');
+        } else if(animal === 'Rat') {
+            $(".wheel").addClass('goToRat');
+        } else if(animal === 'Ox') {
+            $(".wheel").addClass('goToOx');
+        } else if(animal === 'Tiger') {
+            $(".wheel").addClass('goToTiger');
+        } else if(animal === 'Rabbit') {
+            $(".wheel").addClass('goToRabbit');
+        } else if(animal === 'Dragon') {
+            $(".wheel").addClass('goToDragon');
+        } else {
+            $(".wheel").addClass('goToSnake');
+        }
+
+        if(animal === 'Horse') {
+            
+            $('.animalInfo').html('<div class="row"><div class="col-12"><h1>You are the year of the horse!</h1></div></div><div class="row"><div class="col-2"><img src="./images/animals/horse.jpg"></img></div><div class="col-10"><p>Those born under the Chinese Zodiac sign of the Horse love to roam free. They’re energetic, self-reliant, money-wise, and they enjoy traveling, love and intimacy. They’re great at seducing, sharp-witted, impatient and sometimes seen as a drifter. Compatible with Dog or Tiger.</p></div></div>');  
+  
+        } else if(animal === 'Sheep') {
+            $('.animalInfo').html('<h1>You are the year of the sheep!</h3><p>Those born under the Chinese Zodiac sign of the Goat enjoy being alone in their thoughts. They’re creative, thinkers, wanderers, unorganized, high-strung and insecure, and can be anxiety-ridden. They need lots of love, support and reassurance. Appearance is important too. Compatible with Pig or Rabbit.</p>'); 
+    
+        }
+
     }
 
-    var wheel = new wheelnav("wheelDiv");
-    wheel.createWheel(["Horse", "Sheep", "Monkey", "Chicken", "Dog", "Pig", "Rat", "Ox", "Tiger", "Rabbit", "Dragon", "Snake" ]);
-    wheel.navigateWheel(animal);
+
+
 
   });

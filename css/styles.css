@@ -1,0 +1,214 @@
+
+body {
+    font-family: 'corpid_c4_regular','Calibri',Arial,sans-serif;
+    font-size: 14px;
+}
+
+/* Header */
+
+#header {
+    padding: 2%;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+#header img {
+    width: 100%;
+}
+
+
+/* Alert */
+
+.alert {
+    background-color: #006f62;
+    color: #FFF;
+    border-radius: 0;
+    text-align: center;
+}
+
+.alert span {
+    padding: 2% 0;
+    float: left;
+}
+
+.alert a.btn {
+    color: #FFF;
+    border: 1px solid #FFF;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 0 20px;
+    border-radius: 0;
+    clear: both;
+}
+
+.alert a.btn:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+
+/* Wheel Area */
+
+.wheelArea {
+    background-image: url(../images/background.jpg);
+    background-repeat: no-repeat;
+}
+
+.wheelArea .wheel {
+    margin: 8% 0 0 0;
+    -moz-transition: transform 1s;
+    -webkit-transition: transform 1s;
+    transition: transform 1s;
+    width: 100%;
+    background-position: 0 -25%;
+}
+
+
+/* Content Area */
+
+.contentArea {
+    width: 100%;
+    height: 900px;
+    background-color: #FFF;
+    margin: -22% 0 0 0;
+    z-index: 1;
+    position: relative;
+}
+
+.contentArea .selectionArea {
+    background-color: #006f62;
+    padding: 3%;
+}
+
+.contentArea .selectionArea h3 {
+    color: #FFF;
+}
+
+.contentArea .selectionArea form {
+    margin: 2% 0 0 0;
+}
+
+.contentArea .selectionArea form .error{
+    color: #c70000;
+}
+
+.contentArea .selectionArea form select {
+    width: 100%;
+    border: 2px solid #FFF;
+    height: 47px;
+    margin: 0 0 2% 0;
+}
+
+.contentArea .selectionArea form input {
+    width: 100%;
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 12px 20px;
+    background-color: #006f62;
+    margin: 0 0 2% 0;
+}
+
+.contentArea .selectionArea form input:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+
+
+.contentArea .selectionArea .animalInfo {
+    margin: 4% 0 1% 0;
+}
+
+.contentArea .selectionArea .animalInfo h3 {
+
+}
+
+.contentArea .selectionArea .animalInfo img {
+    width: 100%;
+}
+
+.contentArea .selectionArea .animalInfo p {
+    color: #FFF;
+}
+
+
+
+/* Custom Media Queries */ 
+
+@media (min-width: 700px) {
+    .alert span {
+        float: none;
+    }
+    .alert a.btn {
+        clear: none;
+    }
+}
+
+@media (min-width: 992px) {
+    #header {
+        padding: 1%;
+        border-bottom: 1px solid #d6d6d6;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.goToSnake {
+    transform: rotate(-360deg);
+}
+
+.goToHorse {
+    transform: rotate(-330deg);
+}
+
+.goToSheep {
+    transform: rotate(-300deg);
+}
+
+.goToMonkey {
+    transform: rotate(-270deg);
+}
+
+.goToChicken {
+    transform: rotate(-240deg);
+}
+
+.goToDog {
+    transform: rotate(-210deg);
+}
+
+.goToPig {
+    transform: rotate(-180deg);
+}
+
+.goToRat {
+    transform: rotate(-150deg);
+}
+
+.goToOx {
+    transform: rotate(-120deg);
+}
+
+.goToTiger {
+    transform: rotate(-90deg);
+}
+
+.goToRabbit {
+    transform: rotate(-60deg);
+}
+
+.goToDragon {
+    transform: rotate(-30deg);
+}
