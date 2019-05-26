@@ -1,4 +1,5 @@
 
+// Creating an object array for lunar calendar data
 var dates = [
     {
         startDate: "01/29/1930",
@@ -408,11 +409,7 @@ var dates = [
 ];
 
 
-
-
-
-
-
+// On form submit check to see what date range matches the users DOB and output the animal associated with that object
 $( "form" ).submit(function( event ) {
     event.preventDefault();
 
@@ -423,6 +420,7 @@ $( "form" ).submit(function( event ) {
     var birthday = new Date(month+'/'+day+'/'+year);
     var animal;
     
+    // Loop through all objects in the array and match the users DOB with a date range
     for(i = 0; i < dates.length; i++) {
         var from = new Date(dates[i].startDate);
         var to = new Date(dates[i].endDate);
@@ -432,51 +430,124 @@ $( "form" ).submit(function( event ) {
         }
     }
 
-    console.log(animal);
-
-
+    // If user hasn't selected a day, month or year show error
     if(animal === undefined) {
         $('.error').text('Please enter your full birthday');
+    // Else add a specific class to the wheel to make it animate
     } else {
-
+        $('.error').text('');
         if (animal === 'Horse') {
-            $(".wheel").addClass('goToHorse');
+            $(".wheel").removeClass().addClass('wheel goToHorse');
         } else if(animal === 'Sheep') {
-            $(".wheel").addClass('goToSheep');
+            $(".wheel").removeClass().addClass('wheel goToSheep');
         } else if(animal === 'Monkey') {
-            $(".wheel").addClass('goToMonkey');
+            $(".wheel").removeClass().addClass('wheel goToMonkey');
         } else if(animal === 'Chicken') {
-            $(".wheel").addClass('goToChicken');
+            $(".wheel").removeClass().addClass('wheel goToChicken');
         } else if(animal === 'Dog') {
-            $(".wheel").addClass('goToDog');
+            $(".wheel").removeClass().addClass('wheel goToDog');
         } else if(animal === 'Pig') {
-            $(".wheel").addClass('goToPig');
+            $(".wheel").removeClass().addClass('wheel goToPig');
         } else if(animal === 'Rat') {
-            $(".wheel").addClass('goToRat');
+            $(".wheel").removeClass().addClass('wheel goToRat');
         } else if(animal === 'Ox') {
-            $(".wheel").addClass('goToOx');
+            $(".wheel").removeClass().addClass('wheel goToOx');
         } else if(animal === 'Tiger') {
-            $(".wheel").addClass('goToTiger');
+            $(".wheel").removeClass().addClass('wheel goToTiger');
         } else if(animal === 'Rabbit') {
-            $(".wheel").addClass('goToRabbit');
+            $(".wheel").removeClass().addClass('wheel goToRabbit');
         } else if(animal === 'Dragon') {
-            $(".wheel").addClass('goToDragon');
+            $(".wheel").removeClass().addClass('wheel goToDragon');
         } else {
-            $(".wheel").addClass('goToSnake');
+            $(".wheel").removeClass().addClass('wheel goToSnake');
         }
 
+        // Add text about the matching animal to a div and have it fade in
         if(animal === 'Horse') {
-            
-            $('.animalInfo').html('<div class="row"><div class="col-12"><h1>You are the year of the horse!</h1></div></div><div class="row"><div class="col-2"><img src="./images/animals/horse.jpg"></img></div><div class="col-10"><p>Those born under the Chinese Zodiac sign of the Horse love to roam free. They’re energetic, self-reliant, money-wise, and they enjoy traveling, love and intimacy. They’re great at seducing, sharp-witted, impatient and sometimes seen as a drifter. Compatible with Dog or Tiger.</p></div></div>');  
-  
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Horse!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Horse love to roam free. They’re energetic, self-reliant, money-wise, and they enjoy traveling, love and intimacy. They’re great at seducing, sharp-witted, impatient and sometimes seen as a drifter. Compatible with Dog or Tiger.</p></div></div>').fadeIn('slow');
+            }, 1100);
         } else if(animal === 'Sheep') {
-            $('.animalInfo').html('<h1>You are the year of the sheep!</h3><p>Those born under the Chinese Zodiac sign of the Goat enjoy being alone in their thoughts. They’re creative, thinkers, wanderers, unorganized, high-strung and insecure, and can be anxiety-ridden. They need lots of love, support and reassurance. Appearance is important too. Compatible with Pig or Rabbit.</p>'); 
-    
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Sheep!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Sheep enjoy being alone in their thoughts. They’re creative, thinkers, wanderers, unorganized, high-strung and insecure, and can be anxiety-ridden. They need lots of love, support and reassurance. Appearance is important too. Compatible with Pig or Rabbit.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Monkey') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Monkey!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Monkey thrive on having fun. They’re energetic, upbeat, and good at listening but lack self-control. They like being active and stimulated and enjoy pleasing self before pleasing others. They’re heart-breakers, not good at long-term relationships, morals are weak. Compatible with Rat or Dragon.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Chicken') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Chicken!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Chicken are practical, resourceful, observant, analytical, straightforward, trusting, honest, perfectionists, neat and conservative. Compatible with Ox or Snake.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Dog') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Dog!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Dog are loyal, faithful, honest, distrustful, often guilty of telling white lies, temperamental, prone to mood swings, dogmatic, and sensitive. Dogs excel in business but have trouble finding mates. Compatible with Tiger or Horse.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Pig') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Pig!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Pig are extremely nice, good-mannered and tasteful. They’re perfectionists who enjoy finer things but are not perceived as snobs. They enjoy helping others and are good companions until someone close crosses them, then look out! They’re intelligent, always seeking more knowledge, and exclusive. Compatible with Rabbit or Goat.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Rat') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Rat!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Rat are quick-witted, clever, charming, sharp and funny. They have excellent taste, are a good friend and are generous and loyal to others considered part of its pack. Motivated by money, can be greedy, is ever curious, seeks knowledge and welcomes challenges. Compatible with Dragon or Monkey.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Ox') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Ox!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Another of the powerful Chinese Zodiac signs, the Ox is steadfast, solid, a goal-oriented leader, detail-oriented, hard-working, stubborn, serious and introverted but can feel lonely and insecure. Takes comfort in friends and family and is a reliable, protective and strong companion. Compatible with Snake or Rooster.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Tiger') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Tiger!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Tiger are authoritative, self-possessed, have strong leadership qualities, are charming, ambitious, courageous, warm-hearted, highly seductive, moody, intense, and they’re ready to pounce at any time. Compatible with Horse or Dog.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Rabbit') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Rabbit!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Rabbit enjoy being surrounded by family and friends. They’re popular, compassionate, sincere, and they like to avoid conflict and are sometimes seen as pushovers. Rabbits enjoy home and entertaining at home. Compatible with Goat or Pig.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else if(animal === 'Dragon') {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Dragon!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>A powerful sign, those born under the Chinese Zodiac sign of the Dragon are energetic and warm-hearted, charismatic, lucky at love and egotistic. They’re natural born leaders, good at giving orders and doing what’s necessary to remain on top. Compatible with Monkey and Rat.</p></div></div>').fadeIn('slow');
+            }, 1100);
+        } else {
+            setTimeout(function() {
+                $('.animalInfo').hide().html('<div class="row"><div class="col-12 text-center"><h2>You were born on the Chinese year of the<h1>Snake!</h1></h2></div></div><div class="row"><div class="col-12 text-center"><p>Those born under the Chinese Zodiac sign of the Snake are seductive, gregarious, introverted, generous, charming, good with money, analytical, insecure, jealous, slightly dangerous, smart, they rely on gut feelings, are hard-working and intelligent. Compatible with Rooster or Ox.</p></div></div>').fadeIn('slow');
+            }, 1100);
         }
 
     }
 
+});
 
 
-
-  });
+// Functionality for the slider
+$('.slider').slick({
+    autoplay:true,
+    dots: false,
+    infinite: true,
+    speed: 1500,
+    arrows : false,
+    slidesToShow: 6,
+    slidesToScroll: 6,
+    responsive: [
+    {
+        breakpoint: 1024,
+        settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        }
+    },
+    {
+        breakpoint: 600,
+        settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3
+        }
+    },
+    {
+        breakpoint: 480,
+        settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+        }
+    }
+    ]
+});

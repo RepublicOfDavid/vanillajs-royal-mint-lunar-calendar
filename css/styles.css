@@ -1,17 +1,25 @@
 
+/* General */
+
 body {
     font-family: 'corpid_c4_regular','Calibri',Arial,sans-serif;
     font-size: 14px;
+    overflow-x: hidden;
 }
+
+img {
+    width: 100%;
+}
+
 
 /* Header */
 
-#header {
+.header {
     padding: 2%;
     border-bottom: 1px solid #d6d6d6;
 }
 
-#header img {
+.header img {
     width: 100%;
 }
 
@@ -27,7 +35,6 @@ body {
 
 .alert span {
     padding: 2% 0;
-    float: left;
 }
 
 .alert a.btn {
@@ -49,6 +56,7 @@ body {
 /* Wheel Area */
 
 .wheelArea {
+    margin: -16px 0 0 0;
     background-image: url(../images/background.jpg);
     background-repeat: no-repeat;
 }
@@ -61,109 +69,6 @@ body {
     width: 100%;
     background-position: 0 -25%;
 }
-
-
-/* Content Area */
-
-.contentArea {
-    width: 100%;
-    height: 900px;
-    background-color: #FFF;
-    margin: -22% 0 0 0;
-    z-index: 1;
-    position: relative;
-}
-
-.contentArea .selectionArea {
-    background-color: #006f62;
-    padding: 3%;
-}
-
-.contentArea .selectionArea h3 {
-    color: #FFF;
-}
-
-.contentArea .selectionArea form {
-    margin: 2% 0 0 0;
-}
-
-.contentArea .selectionArea form .error{
-    color: #c70000;
-}
-
-.contentArea .selectionArea form select {
-    width: 100%;
-    border: 2px solid #FFF;
-    height: 47px;
-    margin: 0 0 2% 0;
-}
-
-.contentArea .selectionArea form input {
-    width: 100%;
-    color: #FFF;
-    border: 1px solid #FFF;
-    padding: 12px 20px;
-    background-color: #006f62;
-    margin: 0 0 2% 0;
-}
-
-.contentArea .selectionArea form input:hover {
-    color: #000;
-    background-color: #FFF;
-}
-
-
-
-.contentArea .selectionArea .animalInfo {
-    margin: 4% 0 1% 0;
-}
-
-.contentArea .selectionArea .animalInfo h3 {
-
-}
-
-.contentArea .selectionArea .animalInfo img {
-    width: 100%;
-}
-
-.contentArea .selectionArea .animalInfo p {
-    color: #FFF;
-}
-
-
-
-/* Custom Media Queries */ 
-
-@media (min-width: 700px) {
-    .alert span {
-        float: none;
-    }
-    .alert a.btn {
-        clear: none;
-    }
-}
-
-@media (min-width: 992px) {
-    #header {
-        padding: 1%;
-        border-bottom: 1px solid #d6d6d6;
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .goToSnake {
     transform: rotate(-360deg);
@@ -211,4 +116,200 @@ body {
 
 .goToDragon {
     transform: rotate(-30deg);
+}
+
+
+/* Content Area */
+
+.contentArea {
+    width: 100%;
+    background-color: #FFF;
+    margin: -22% 0 0 0;
+    z-index: 1;
+    position: relative;
+}
+
+.contentArea .selectionArea {
+    background-color: #006f62;
+    padding: 3%;
+}
+
+.contentArea .selectionArea h2 {
+    color: #FFF;
+}
+
+.contentArea .selectionArea form {
+    margin: 2% 0 0 0;
+}
+
+.contentArea .selectionArea form .error{
+    color: #c70000;
+}
+
+.contentArea .selectionArea form select {
+    width: 100%;
+    border: 2px solid #FFF;
+    height: 47px;
+    margin: 0 0 2% 0;
+}
+
+.contentArea .selectionArea form input {
+    width: 100%;
+    color: #FFF;
+    border: 1px solid #FFF;
+    padding: 12px 20px;
+    background-color: #006f62;
+    margin: 0 0 2% 0;
+}
+
+.contentArea .selectionArea form input:hover {
+    color: #000;
+    background-color: #FFF;
+}
+
+
+/* Animal Info */
+
+.contentArea .selectionArea .animalInfo {
+    display: none;
+    margin: 4% 0 1% 0;
+}
+
+.contentArea .selectionArea .animalInfo img {
+    width: 100%;
+}
+
+.contentArea .selectionArea .animalInfo p {
+    color: #FFF;
+}
+
+
+/* Privacy Notice */
+
+.privacyNotice {
+    font-style: italic;
+}
+
+
+/* Content */
+
+.contentArea .content {
+    margin: 5% 0 0 0;
+}
+
+.contentArea .content h2 {
+    color: #5d285f;
+}
+
+.contentArea .content img {
+    margin: 0 0 5% 0;
+}
+
+.contentArea .content .btnOne {
+    width: 100%;
+    color: #5d285f;
+    border: 1px solid #5d285f;
+    padding: 12px 20px;
+    border-radius: 0;
+    float: left;
+    text-align: center;
+    margin: 0 0 3% 0;
+}
+
+.contentArea .content .btnOne:hover {
+    text-decoration: none;
+    background-color: #5d285f;
+    color: #FFF;
+}
+
+.contentArea .content .btnTwo {
+    width: 100%;
+    color: #FFF;
+    border: 1px solid #5d285f;
+    padding: 12px 20px;
+    background-color: #5d285f;
+    border-radius: 0;
+    float: left;
+    text-align: center;
+}
+
+.contentArea .content .btnTwo:hover {
+    text-decoration: none;
+}
+
+
+/* Slider */
+
+.sliderArea {
+    margin: 5% 0 0 0;
+}
+
+.slider div {
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #FFF;
+}
+
+
+/* Slogan */
+
+.slogan {
+    margin: 5% 0;
+}
+
+.slogan h3 {
+color: #5d285f;
+}
+
+
+/* Footer*/
+
+.footer {
+    background-color: #f5f5f5;
+    padding: 4%;
+}
+
+.footer a {
+    color: #000;
+}
+
+.footer h3 {
+    font-size: 16px;
+    padding: 0 0 15px 0;
+    margin: 0 0 10px 0;
+}
+
+.footer ul {
+    list-style: none;
+    margin: 0 0 10% 0;
+    padding: 0; 
+}
+
+.footer ul li {
+    margin: 0 0 15px 0;
+    padding: 0 0 15px 0;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.footer ul li  a{
+    font-size: 14px;
+    color: #253746;
+}
+
+
+/* Custom Media Queries */ 
+
+@media (min-width: 700px) {
+    .alert span {
+        float: none;
+    }
+    .alert a.btn {
+        clear: none;
+    }
+}
+
+@media (min-width: 992px) {
+    #header {
+        padding: 1%;
+        border-bottom: 1px solid #d6d6d6;
+    }
 }
